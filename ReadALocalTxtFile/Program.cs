@@ -17,17 +17,12 @@ namespace ReadALocalTxtFile
 
 
             //Second assignment
-            ReadAllMatchingStatus readNetworkLogFile = new ReadAllMatchingStatus();
+            ReadAllMatchingStatus readAllMatchingStatus = new ReadAllMatchingStatus();
 
-            //Prints all records having "Success" status
-            readNetworkLogFile.ReadFile("Success");
-            //Prints all records having "Failed" status
-            readNetworkLogFile.ReadFile("Failed");
-
-            //Prints all records having "Missed" status
-            readNetworkLogFile.ReadFile("Missed");
-            ////Prints all records having "Dialled" status
-            readNetworkLogFile.ReadFile("Dialled");
+            readAllMatchingStatus.Success();
+            //readAllMatchingStatus.Failed();
+            //readAllMatchingStatus.Dialled();
+            //readAllMatchingStatus.Missed();
 
 
         }

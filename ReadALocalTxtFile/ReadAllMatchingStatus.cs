@@ -15,7 +15,28 @@ namespace ReadALocalTxtFile
             StreamReader streamReaderObj = new StreamReader(fileStreamObj);
         }
 
-        //Takes Status as a input and print all records of same status  
+       public void Success()
+        {
+            ReadAllMatchingStatus readAllMatchingStatusObj = new ReadAllMatchingStatus();
+            readAllMatchingStatusObj.ReadFile("Success");
+        }
+       public void Failed()
+        {
+            ReadAllMatchingStatus readAllMatchingStatusObj = new ReadAllMatchingStatus();
+            readAllMatchingStatusObj.ReadFile("Failed");
+        }
+        public void Dialled()
+        {
+            ReadAllMatchingStatus readAllMatchingStatusObj = new ReadAllMatchingStatus();
+            readAllMatchingStatusObj.ReadFile("Dialled");
+        }
+       public void Missed()
+        {
+            ReadAllMatchingStatus readAllMatchingStatusObj = new ReadAllMatchingStatus();
+            readAllMatchingStatusObj.ReadFile("Missed");
+        }
+
+        //ReadFile method Takes Status as a input and print all records of same status  
         public void ReadFile(String status)
         {
             FileStream fileStreamObj = new FileStream(@"C:\Users\iamte\Desktop\networkLogs1.txt", FileMode.Open, FileAccess.Read);
@@ -23,6 +44,7 @@ namespace ReadALocalTxtFile
             Console.WriteLine("Id\tSource\t\tDestination\tDate\t    Time\tStatus\tNetwork");
             
             //declaring a empty string for concatanate line between empty lines and then search for desired status records
+            
             string result = "";
             while (streamReaderObj.Peek() > 0)
             {
@@ -55,6 +77,8 @@ namespace ReadALocalTxtFile
                         }              
                 }
             }
+
+        
         }
     }
 }
